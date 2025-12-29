@@ -9,17 +9,18 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(OpenSSL REQUIRED)
 
 set(BOOSTPP_SRC
-    main.cc
+    # main.cc
+    include/async_request.cc
 )
 
 add_executable(${PROJECT_NAME} ${BOOSTPP_SRC})
 
 target_include_directories(${PROJECT_NAME} PRIVATE 
-    /home/cells/dev/cpp-project/boost
+    /home/cells/dev/cpp-project/boostpp/3rd/boost
 )
 
 target_link_directories(${PROJECT_NAME} PRIVATE
-    /home/cells/dev/cpp-project/boost/stage/lib
+    /home/cells/dev/cpp-project/boostpp/3rd/boost/stage/lib
 )
 
 target_link_libraries(${PROJECT_NAME} PRIVATE
